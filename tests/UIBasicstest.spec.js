@@ -8,7 +8,7 @@ const{test, expect} = require('@playwright/test');
 
     const context = await browser.newContext();
     const page = await context.newPage();
-    await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
+    await page.goto('https://google.com');
     
     //get title
     
@@ -29,7 +29,7 @@ const{test, expect} = require('@playwright/test');
 
   test('register to sign in with personal account',async ({page})=>
   {
-    await page.goto('https://rahulshettyacademy.com/clint/auth/login');
+    await page.goto('');
     //get title - assertion
     
 
