@@ -3,7 +3,7 @@ const{test, expect} = require('@playwright/test');
 
 
 
-  test.only('Brower Context playwright test',async ({browser})=>
+  test('Brower Context playwright test',async ({browser})=>
   {
 
     const context = await browser.newContext();
@@ -53,10 +53,50 @@ const{test, expect} = require('@playwright/test');
 
 
 
-  test('register to sign in with personal account',async ({page})=>
+  test.only('Register to sign in with personal account',async ({page})=>
   {
-    await page.goto('');
-    //get title - assertion
+    //locator element declaration
+    const register_Link = page.locator(".text-reset");
+    const firstName = page.locator("#firstName");
+    const lastName = page.locator("#lastName");
+    const email = page.locator("#userEmail");
+    const phoneNmber = page.locator("#userMobile");
+    const dropDown = page.locator("select.custom-select");
+    const radioBtn = page.locator("input[value='Female']");
+    const password = page.locator("#userPassword");
+    const confirmPassword = page.locator("#confirmPassword");
+    const checkBox = page.locator("input[type='checkbox']");
+    const signUpBtn = page.locator("#login")
+    const loginBtn = page.locator("//a[normalize-space()='Login here']");
+    const cardTitles = page.locator("//b[normalize-space()='ZARA COAT 3']");
+ 
+    await page.goto('https://rahulshettyacademy.com/client/#/auth/login'); //navigate to url
+    await register_Link.click(); // click on a element
+    await firstName.fill('Nevile');  // typing on a element
+    await lastName.fill('Mpina'); // typing on a element  
+    await email.fill('nevillempiana@gmail.com');
+    await phoneNmber.fill('5817606872');
+    await dropDown.selectOption('1: Doctor'); // select from dropdown
+    await radioBtn.click(); // click on a element
+    await password.fill('Neville123'); // typing on a element
+    await confirmPassword.fill('Neville123'); // typing on a element
+    await checkBox.click(); // click on a element
+    await signUpBtn.click(); // click on a element
+    await expect(radioBtn).toBeChecked(); // assertion
+    await expect(checkBox).toBeChecked(); // assertion
+    await loginBtn.click(); // click on a element
+
+
+    //login with the created account
+    const signInBtn = page.locator("#login");
+    
+    await email.fill('nevillempiana@gmail.com');  // typing on a element
+    await password.fill('Neville123'); // typing on a element  
+    await signInBtn.click(); // click on a element
+
+    //getting the first card title
+    console.log( await cardTitles.first().textContent());
+    await page.pause();
     
 
   });
