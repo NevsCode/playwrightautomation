@@ -8,7 +8,7 @@ export default defineConfig({
   expect: {
     timeout: 5000,   //30 seconds
   },
-
+  reporter: [['html', { open: 'always' }]],  //get report
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     browserName: 'chromium',   // browser

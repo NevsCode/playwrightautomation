@@ -71,7 +71,7 @@ test.only('Register to sign in with personal account', async ({ page }) => {
   await register_Link.click(); // click on a element
   await firstName.fill('Joyce');  // typing on a element
   await lastName.fill('Sabwa'); // typing on a element  
-  await email.fill('joycesabwa@gmail.com');
+  await email.fill('keke@gmail.com');
   await phoneNmber.fill('6817606872');
   await dropDown.selectOption('1: Doctor'); // select from dropdown
   await radioBtn.click(); // click on a element
@@ -87,7 +87,7 @@ test.only('Register to sign in with personal account', async ({ page }) => {
   //login with the created account
   const signInBtn = page.locator("#login");
 
-  await email.fill('joycesabwa@gmail.com');  // typing on a element
+  await email.fill('keke@gmail.com');  // typing on a element
   await password.fill('Neville123'); // typing on a element  
   await signInBtn.click(); // click on a element
 
