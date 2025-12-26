@@ -9,7 +9,7 @@ const{test, expect} = require('@playwright/test');
     const context = await browser.newContext();
 
     const page = await context.newPage();
-    await page.goto('https://rahulshettyacademy.com/loginpagePractise');
+    await page.goto('/loginpagePractise');
 
     const userName = page.locator("#username"); //locator element declaration
     const password = page.locator("#password");
@@ -70,7 +70,7 @@ const{test, expect} = require('@playwright/test');
     const loginBtn = page.locator("//a[normalize-space()='Login here']");
     const cardTitles = page.locator("//b[normalize-space()='ZARA COAT 3']");
  
-    await page.goto('https://rahulshettyacademy.com/client/#/auth/login'); //navigate to url
+    await page.goto('/client/#/auth/login'); //navigate to url
     await register_Link.click(); // click on a element
     await firstName.fill('Nevile');  // typing on a element
     await lastName.fill('Mpina'); // typing on a element  
