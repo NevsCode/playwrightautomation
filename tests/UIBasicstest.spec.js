@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
-
+const email = 'keke@gmail.com'
+const password = 'Neville123'
 
 
 test('Brower Context playwright test', async ({ browser }) => {
@@ -18,7 +19,7 @@ test('Brower Context playwright test', async ({ browser }) => {
   console.log(await page.title());
 
   await userName.fill('nevil');  // typing on a element
-  await password.fill('nevil123'); // typing on a element  
+  await password.fill(password); // typing on a element  
 
   await signInBtn.click(); // click on a element 
 
@@ -71,7 +72,7 @@ test.only('Register to sign in with personal account', async ({ page }) => {
   await register_Link.click(); // click on a element
   await firstName.fill('Joyce');  // typing on a element
   await lastName.fill('Sabwa'); // typing on a element  
-  await email.fill('keke@gmail.com');
+  await email.fill(email);
   await phoneNmber.fill('6817606872');
   await dropDown.selectOption('1: Doctor'); // select from dropdown
   await radioBtn.click(); // click on a element
@@ -87,12 +88,12 @@ test.only('Register to sign in with personal account', async ({ page }) => {
   //login with the created account
   const signInBtn = page.locator("#login");
 
-  await email.fill('keke@gmail.com');  // typing on a element
-  await password.fill('Neville123'); // typing on a element  
+  await email.fill(email);  // typing on a element
+  await password.fill(password); // typing on a element  
   await signInBtn.click(); // click on a element
 
   //getting the first card title
-  // console.log( await cardTitles.first().textContent());
+  console.log(await cardTitles.first().textContent());
   // await page.pause();
 
 
