@@ -9,7 +9,7 @@ const{test, expect} = require('@playwright/test');
     const context = await browser.newContext();
 
     const page = await context.newPage();
-    await page.goto('https://rahulshettyacademy.com/loginpagePractise');
+    await page.goto('/loginpagePractise');
 
     const userName = page.locator("#username"); //locator element declaration
     const password = page.locator("#password");
@@ -67,15 +67,15 @@ const{test, expect} = require('@playwright/test');
     const confirmPassword = page.locator("#confirmPassword");
     const checkBox = page.locator("input[type='checkbox']");
     const signUpBtn = page.locator("#login")
-    const loginBtn = page.locator("//a[normalize-space()='Login here']");
+    const loginBtn = page.locator(".btn.btn-primary");
     const cardTitles = page.locator("//b[normalize-space()='ZARA COAT 3']");
  
-    await page.goto('https://rahulshettyacademy.com/client/#/auth/login'); //navigate to url
+    await page.goto('/client/#/auth/login'); //navigate to url
     await register_Link.click(); // click on a element
-    await firstName.fill('Nevile');  // typing on a element
-    await lastName.fill('Mpina'); // typing on a element  
-    await email.fill('nevillempiana@gmail.com');
-    await phoneNmber.fill('5817606872');
+    await firstName.fill('Joyce');  // typing on a element
+    await lastName.fill('Sabwa'); // typing on a element  
+    await email.fill('joycesabwa@gmail.com');
+    await phoneNmber.fill('6817606872');
     await dropDown.selectOption('1: Doctor'); // select from dropdown
     await radioBtn.click(); // click on a element
     await password.fill('Neville123'); // typing on a element
@@ -90,7 +90,7 @@ const{test, expect} = require('@playwright/test');
     //login with the created account
     const signInBtn = page.locator("#login");
     
-    await email.fill('nevillempiana@gmail.com');  // typing on a element
+    await email.fill('joycesabwa@gmail.com');  // typing on a element
     await password.fill('Neville123'); // typing on a element  
     await signInBtn.click(); // click on a element
 
